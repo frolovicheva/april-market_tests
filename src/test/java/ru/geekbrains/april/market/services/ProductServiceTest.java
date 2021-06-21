@@ -57,17 +57,17 @@ class ProductServiceTest {
     }
 
     @Test
-    public void updateProduct() {
+    public void updateProductTest() {
         ProductDto someProductDto = new ProductDto (1L,"apple", BigDecimal.valueOf (25.50), "Food");
-        Product someProduct = new Product ();
-        someProduct.setId (1L);
-        someProduct.setTitle ("apple");
-        someProduct.setPrice (BigDecimal.valueOf (25.50));
-        Mockito.doReturn (Optional.of(someProduct)).when(productRepository).findById (1L);
-        ProductDto updatedProduct = productService.updateProduct (someProductDto);
-        Assertions.assertNotNull (updatedProduct);
-        Assertions.assertEquals("apple",updatedProduct.getTitle());
-        Assertions.assertEquals(BigDecimal.valueOf (25.50),updatedProduct.getPrice());
-        Assertions.assertEquals("Food",updatedProduct.getCategoryTitle());
+        Product oldProductFromDB = new Product ();
+        oldProductFromDB.setId (1L);
+        oldProductFromDB.setTitle ("orange");
+        oldProductFromDB.setPrice (BigDecimal.valueOf (15.00));
+        Mockito.doReturn (Optional.of(oldProductFromDB)).when(productRepository).findById (1L);
+        ProductDto updatedProductDto = productService.updateProduct (someProductDto);
+        Assertions.assertNotNull (updatedProductDto);
+        Assertions.assertEquals("apple",updatedProductDto.getTitle());
+        Assertions.assertEquals(BigDecimal.valueOf (25.50),updatedProductDto.getPrice());
+        Assertions.assertEquals("Food",updatedProductDto.getCategoryTitle());
     }
 }

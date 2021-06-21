@@ -25,7 +25,7 @@ class ProductRepositoryTest {
     private TestEntityManager entityManager;
 
     @Test
-    public void genreRepositoryTest() {
+    public void productRepositoryTest() {
         Product product = new Product ();
         product.setTitle("Grape");
         entityManager.persist(product);
