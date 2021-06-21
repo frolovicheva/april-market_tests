@@ -59,7 +59,7 @@ insert into products (title, price, category_id)
 values
 ('Bread', 25.50, 1),
 ('Milk', 80.40, 1),
-('Cheese', 325.00, 1),
+('Cheese', 325.15, 1),
 ('Cheese2', 325.00, 1),
 ('Cheese3', 325.00, 1),
 ('Cheese4', 325.00, 1),
